@@ -23,7 +23,7 @@ function App() {
       element: <FamilyRelationsPage />,
     },
     {
-      path: "/Confirmation",
+      path: "/confirmationpage",
       element: <ConfirmationPage />,
     },
    

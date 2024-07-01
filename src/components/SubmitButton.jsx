@@ -1,10 +1,10 @@
-function SubmitButton({link}) {
+function SubmitButton({submitName}) {
 
 //  const handleOnclick = 
 
   return ( <>
   <button >
-    Submit
+    {submitName}
   </button>
   
   </> );

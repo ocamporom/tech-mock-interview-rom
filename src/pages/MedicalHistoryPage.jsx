@@ -2,13 +2,14 @@ import React, { useState } from "react";
 import SubmitButton from "../components/SubmitButton";
 import style from "../pages/MedicalHistoryPage.module.css";
 import Header from "../components/Header";
+import { Link } from "react-router-dom";
 
 const MedicalHistoryPage = () => {
   const [drinkAlcohol, setDrinkAlcohol] = useState(false); // not showing by defualt kasi false
   const [smoke, setSmoke] = useState(false);
   const [alcoholFrequency, setAlcoholFrequency] = useState("");
   const [smokingFrequency, setSmokingFrequency] = useState("");
-  const [bloodType, setBloodType] = useState("");
+ 
   const [otherConditions, setOtherConditions] = useState("");
 
   const handleAlcoholChange = (e) => {
@@ -26,6 +27,8 @@ const MedicalHistoryPage = () => {
   };
 
   return (
+
+    
     <div className={style.medicalInfo}>
       <div className={style.headerName}>
         <Header headerName={"MEDICAL HISTORY PAGE"} />
@@ -108,7 +111,8 @@ const MedicalHistoryPage = () => {
           placeholder="List any other previous medical conditions"
         />
       </div>
-      <SubmitButton />
+     <Link to = "/familyrelations">Next Page</Link><br/>
+     <Link to = "/">Basic Info Page</Link>
     </div>
   );
 };
