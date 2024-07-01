@@ -1,8 +1,12 @@
+import style from './Header.module.css'
+
+
+
 function Header({headerName}) {
   return ( <>
-
-  <h1>{headerName}</h1>
-  
+   <div className={style.headerName}>
+  <h1 >{headerName}</h1>
+  </div>
   </> );
 }
 
