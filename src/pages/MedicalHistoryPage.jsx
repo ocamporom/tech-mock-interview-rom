@@ -9,7 +9,7 @@ const MedicalHistoryPage = () => {
   const [smoke, setSmoke] = useState(false);
   const [alcoholFrequency, setAlcoholFrequency] = useState("");
   const [smokingFrequency, setSmokingFrequency] = useState("");
- 
+
   const [otherConditions, setOtherConditions] = useState("");
 
   const handleAlcoholChange = (e) => {
@@ -27,8 +27,6 @@ const MedicalHistoryPage = () => {
   };
 
   return (
-
-    
     <div className={style.medicalInfo}>
       <div className={style.headerName}>
         <Header headerName={"MEDICAL HISTORY PAGE"} />
@@ -45,7 +43,7 @@ const MedicalHistoryPage = () => {
           </select>
         </label>
 
-        {drinkAlcohol && ( // always remember boolean variable
+        {drinkAlcohol && ( // always remember boolean variable if you want a popup
           <div>
             <label>How often do you drink?</label>
             <br />
@@ -96,8 +94,6 @@ const MedicalHistoryPage = () => {
           <option value="O+">O positive (O+)</option>
           <option value="O-">O negative (O-)</option>
         </select>
-
-        
       </div>
 
       <div>
@@ -111,8 +107,9 @@ const MedicalHistoryPage = () => {
           placeholder="List any other previous medical conditions"
         />
       </div>
-     <Link to = "/familyrelations">Next Page</Link><br/>
-     <Link to = "/">Basic Info Page</Link>
+      <Link to="/familyrelations">Next Page</Link>
+      <br />
+      <Link to="/">Basic Info Page</Link>
     </div>
   );
 };

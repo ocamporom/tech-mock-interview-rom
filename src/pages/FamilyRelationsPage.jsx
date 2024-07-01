@@ -1,17 +1,15 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import Header from "../components/Header";
-import InputFields from "../components/InputFields"; // Assuming this is correctly named InputFields component
-import SubmitButton from "../components/SubmitButton"; // Assuming this is correctly imported
-import styles from "./FamilyRelationsPage.module.css"; // Correct import for CSS module
+import InputFields from "../components/InputFields";
+import styles from "./FamilyRelationsPage.module.css";
 
 function FamilyRelationsPage() {
   const [addMember, setAddMember] = useState(false); // State for managing addition of family members
-  const [showMessage, setShowMessage] = useState(false);
+  const [showMessage, setShowMessage] = useState(false); // State for showing success message
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
     setShowMessage(true);
   };
 
@@ -19,85 +17,161 @@ function FamilyRelationsPage() {
     setShowMessage(false);
   };
 
-  const handleAddMemberChange = (e) => {
-    setAddMember(e.target.value === "yes");
-   
+  const handleAddMemberChange = () => {
+    setAddMember(!addMember); // Toggle addMember state
   };
 
   return (
     <>
-      <div className={styles.showMessage}>
-        {showMessage && (
-          <>
-                        <h1>Success!</h1>           {" "}
-            <p>Your information has been submitted successfully.</p>         
-            <button onClick={handleClosePopUp}>
-                            Close          
-            </button>
-                         
-          </>
-        )}
-      </div>
       <div className={styles.headerName}>
         <Header headerName={"FAMILY COMPOSITIONS"} />
       </div>
 
-
-
-
-
-
-    
-        <div className={styles.InputFields}>
-          <div className={styles.SubInputFields}>
-            <InputFields label={"Other Source of Income"} />
-            <InputFields type="date" label={"Birth Order"} />
-            <InputFields label={"Total House Population"} />
-            <InputFields label={"# of Married Siblings"} />
-            <InputFields label={"Contributions"} />
-          </div>
+      <div className={styles.InputFields}>
+        <div className={styles.SubInputFields}>
+          <InputFields label={"Other Source of Income"} />
+          <InputFields type="date" label={"Birth Order"} />
+          <InputFields type="number" label={"Total House Population"} />
+          <InputFields type="number" label={"# of Married Siblings"} />
+          <InputFields label={"Contributions"} />
         </div>
+      </div>
 
-        <div className={styles.optionalForm}>
-          <div>
-            <label>Want to add Family Member/s?</label>
-            <select
-              value={addMember ? "yes" : "no"}
-              onChange={handleAddMemberChange}
-            >
-              <option value="yes">Yes</option>
-              <option value="no">No</option>
-            </select>
+      <div className={styles.optionalForm}>
+        <button onClick={handleAddMemberChange}>
+          Want to add Family Member/s?
+        </button>
+
+        {addMember && (
+          <div className={styles.AddMemberForm}>
+            <InputFields label={"Family Member Name"} />
+            <InputFields
+              type="date"
+              // value="2024-07-01"
+              label={"Date of Birth"}
+            />
+            <InputFields label={"Relationship"} />
+            <InputFields label={"Civil Status"} />
           </div>
+        )}
+        <br />
 
-          {addMember && (
-            <div className={styles.AddMemberForm}>
-              <InputFields label={"Family Member Name"} />
-              <InputFields
-                type="date"
-                value="2024-07-01"
-                label={"Date of Birth"}
-              />
-              <InputFields label={"Relationship"} />
-              <InputFields label={"Civil Status"} />
-            </div>
-          )}
+        <Link to="/">Basic Info Page</Link>
+        <br />
+        <Link to="/medicalhistory">Medical History Page</Link>
+        <br />
 
+        <button onClick={handleSubmit}> SUBMIT </button>
+      </div>
 
-          <Link to="/">Basic Info Page</Link>
-          <br />
-          <Link to="/medicalhistory">Medical History Page</Link>
-          <br />
-          {/* <Link to="/confirmationpage">Confirm</Link> */}
-
-          <button onClick={handleSubmit}> SUBMIT </button>
+      {showMessage && (
+        <div className={styles.showMessage}>
+          <h1>Success!</h1>
+          <p>Your information has been submitted successfully.</p>
+          <button onClick={handleClosePopUp}>Close</button>
         </div>
-     
+      )}
     </>
   );
 }
 
 export default FamilyRelationsPage;
+
+// import React, { useState } from "react";
+// import { Link } from "react-router-dom";
+// import Header from "../components/Header";
+// import InputFields from "../components/InputFields"; // Assuming this is correctly named InputFields component
+// import SubmitButton from "../components/SubmitButton"; // Assuming this is correctly imported
+// import styles from "./FamilyRelationsPage.module.css"; // Correct import for CSS module
+
+// function FamilyRelationsPage() {
+//   const [addMember, setAddMember] = useState(false); // State for managing addition of family members
+//   const [showMessage, setShowMessage] = useState(false);
+
+//   const handleSubmit = (e) => {
+//     e.preventDefault();
+
+//     setShowMessage(true);
+//   };
+
+//   const handleClosePopUp = () => {
+//     setShowMessage(false);
+//   };
+
+//   const handleAddMemberChange = (e) => {
+//     // setAddMember(e.target.value === "yes");
+//     setAddMember(true)
+
+//   };
+
+//   return (
+//     <>
+//       <div className={styles.showMessage}>
+//         {showMessage && (
+//           <>
+//                         <h1>Success!</h1>           {" "}
+//             <p>Your information has been submitted successfully.</p>
+//             <button onClick={handleClosePopUp}>
+//                             Close
+//             </button>
+//
+//           </>
+//         )}
+//       </div>
+//       <div className={styles.headerName}>
+//         <Header headerName={"FAMILY COMPOSITIONS"} />
+//       </div>
+
+//         <div className={styles.InputFields}>
+//           <div className={styles.SubInputFields}>
+//             <InputFields label={"Other Source of Income"} />
+//             <InputFields type="date" label={"Birth Order"} />
+//             <InputFields label={"Total House Population"} />
+//             <InputFields label={"# of Married Siblings"} />
+//             <InputFields label={"Contributions"} />
+//           </div>
+//         </div>
+
+//         <div className={styles.optionalForm}>
+//           <div>
+//             <button value={addMember} onClick={handleAddMemberChange}>Want to add Family Member/s?</button>
+//             {/* <select
+//               // value={addMember ? "yes" : "no"}
+
+//               onChange={handleAddMemberChange}
+//             >
+//               <option value="yes">Yes</option>
+//               <option value="no">No</option>
+//             </select> */}
+//           </div>
+
+//           {addMember && (
+//             <div className={styles.AddMemberForm}>
+//               <InputFields label={"Family Member Name"} />
+//               <InputFields
+//                 type="date"
+//                 value="2024-07-01"
+//                 label={"Date of Birth"}
+//               />
+//               <InputFields label={"Relationship"} />
+//               <InputFields label={"Civil Status"} />
+//             </div>
+//           )}
+
+//           <Link to="/">Basic Info Page</Link>
+//           <br />
+//           <Link to="/medicalhistory">Medical History Page</Link>
+//           <br />
+//           {/* <Link to="/confirmationpage">Confirm</Link> */}
+
+//           <button onClick={handleSubmit}> SUBMIT </button>
+//         </div>
+
+//     </>
+//   );
+// }
+
+// export default FamilyRelationsPage;
 
 // import Header from "../components/Header";
 // import InputField from "../components/InputFields";
