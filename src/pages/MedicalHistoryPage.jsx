@@ -35,7 +35,7 @@ const MedicalHistoryPage = () => {
         <label>
           Do you drink alcohol?
           <select
-            value={drinkAlcohol ? "yes" : "no"}
+            value={drinkAlcohol ? "yes" : "no"}// ternary operator
             onChange={handleAlcoholChange}
           >
             <option value="yes">Yes</option>
@@ -107,9 +107,16 @@ const MedicalHistoryPage = () => {
           placeholder="List any other previous medical conditions"
         />
       </div>
-      <Link to="/familyrelations">Next Page</Link>
+      {/* <Link to="/familyrelations">Next Page</Link>
       <br />
-      <Link to="/">Basic Info Page</Link>
+      <Link to="/">Basic Info Page</Link> */}
+      <Link to="/">
+            <SubmitButton submitName={"Back to Basic Info Page"} />
+          </Link>
+           
+          <Link to="/familyrelations">
+            <SubmitButton submitName={"Next Page"} />
+          </Link>
     </div>
   );
 };

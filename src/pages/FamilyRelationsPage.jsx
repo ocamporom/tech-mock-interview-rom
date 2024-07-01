@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import Header from "../components/Header";
 import InputFields from "../components/InputFields";
 import styles from "./FamilyRelationsPage.module.css";
+import SubmitButton from "../components/SubmitButton";
 
 function FamilyRelationsPage() {
   const [addMember, setAddMember] = useState(false); // State for managing addition of family members
@@ -25,12 +26,14 @@ function FamilyRelationsPage() {
     <>
       <div className={styles.headerName}>
         <Header headerName={"FAMILY COMPOSITIONS"} />
+        
       </div>
-
+         
       <div className={styles.InputFields}>
         <div className={styles.SubInputFields}>
+        <h6>Please fill up all fields!</h6>
           <InputFields label={"Other Source of Income"} />
-          <InputFields type="date" label={"Birth Order"} />
+          <InputFields type="number" label={"Birth Order"} />
           <InputFields type="number" label={"Total House Population"} />
           <InputFields type="number" label={"# of Married Siblings"} />
           <InputFields label={"Contributions"} />
@@ -55,13 +58,24 @@ function FamilyRelationsPage() {
           </div>
         )}
         <br />
-
-        <Link to="/">Basic Info Page</Link>
+        <br />
+        <br />
+        <br />
+        <Link to="/medicalhistory">
+            <SubmitButton submitName={"Back to Medical History Page"} />
+          </Link>
+           
+          <Link to="/confirmationpage">
+            <SubmitButton submitName={"SUBMIT"} />
+          </Link>
+        {/* <Link to="/">Basic Info Page</Link>
         <br />
         <Link to="/medicalhistory">Medical History Page</Link>
         <br />
+        <Link to="/confirmationpage">SUBMIT!</Link> */}
+        {/* <button onClick={handleSubmit}> SUBMIT </button> */}
 
-        <button onClick={handleSubmit}> SUBMIT </button>
+
       </div>
 
       {showMessage && (
