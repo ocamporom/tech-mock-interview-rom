@@ -2,6 +2,7 @@ import Header from "../components/Header";
 import InputField from "../components/InputFields";
 import SubmitButton from "../components/SubmitButton";
 import style from './BasicInfoPage.module.css'
+import { Link } from "react-router-dom";
 
 function BasicInfoPage() {
   return ( 
@@ -21,7 +22,7 @@ function BasicInfoPage() {
     <InputField placeholder={"Phone"} type="number" label={"CONTACTS"}/>
     <InputField placeholder={"Height in cm"} type="number" label={"HEIGHT IN CENTIMETERS"}/>
     <InputField placeholder={"Weight in kg, divide by 2.2 if lbs."} type="number" label={"WEIGHT IN KILOGRAMS"}/>
-    <SubmitButton/>
+    <SubmitButton />
     </div>
     </div>
     </>

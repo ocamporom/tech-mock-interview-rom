@@ -1,6 +1,9 @@
-function SubmitButton() {
+function SubmitButton({link}) {
+
+//  const handleOnclick = 
+
   return ( <>
-  <button>
+  <button >
     Submit
   </button>
   
