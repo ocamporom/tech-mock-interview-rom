@@ -1,16 +1,21 @@
 import styles from './ConfirmationPage.module.css'
+import { Link } from 'react-router-dom';
 
 function ConfirmationPage() {
   return ( <>
    <div className={styles.finalMessage}>
   <h1>YOU HAVE SUCCESSFULLY FILLED UP THE FORM!
-  </h1>
+  
 
-  <h1>JUST WAIT FOR FURTHER INSTRUCTIONS!..THANK YOU
+  JUST WAIT FOR FURTHER INSTRUCTIONS!..THANK YOU
     
   </h1>
-
+  <Link to="/">GO TO BASIC INFO PAGE</Link>
   </div>
+
+ 
+
+ 
   </> );
 }
 
