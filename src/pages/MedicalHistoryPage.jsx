@@ -10,7 +10,7 @@ const MedicalHistoryPage = () => {
   const [otherConditions, setOtherConditions] = useState("");
 
   const handleAlcoholChange = (e) => {
-    setDrinkAlcohol(e.target.value === "yes");
+    setDrinkAlcohol(e.target.value === "yes");//setter
     if (e.target.value === "no") {
       setAlcoholFrequency("");
     }
