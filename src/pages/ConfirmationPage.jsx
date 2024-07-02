@@ -5,10 +5,7 @@ import SubmitButton from '../components/SubmitButton';
 function ConfirmationPage() {
   return ( <>
    <div className="text-center text-2xl font-bold h-screen flex items-center justify-center">
-  <h1>YOU HAVE SUCCESSFULLY FILLED UP THE FORM!
-  
-
-  JUST WAIT FOR FURTHER INSTRUCTIONS!..THANK YOU
+  <h1>YOU HAVE SUCCESSFULLY FILLED UP THE FORM and WAIT FOR FURTHER INSTRUCTIONS!..
     
   </h1>
   

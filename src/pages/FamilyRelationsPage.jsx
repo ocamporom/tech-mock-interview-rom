@@ -7,7 +7,7 @@ import SubmitButton from "../components/SubmitButton";
 
 function FamilyRelationsPage() {
   const [addMember, setAddMember] = useState(false);
-  // const [showMessage, setShowMessage] = useState(false);
+  const [showMessage, setShowMessage] = useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -59,7 +59,13 @@ function FamilyRelationsPage() {
             />
             <InputField label={"Relationship"} />
             <InputField label={"Civil Status"} />
+            <button className="p-2 border border-gray-300 rounded-md">Add</button> 
+            <button className="p-2 border border-gray-300 rounded-md">Delete</button>
+
+
           </div>
+
+          
         )}
         <br />
         <br />
