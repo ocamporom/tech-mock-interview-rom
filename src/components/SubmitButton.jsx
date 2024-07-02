@@ -1,6 +1,6 @@
 function SubmitButton({submitName}) {
 
-//  const handleOnclick = 
+
 
   return ( <>
   <div className=" flex flex-col items-center">
