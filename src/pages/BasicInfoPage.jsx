@@ -7,48 +7,46 @@ import { Link } from "react-router-dom";
 function BasicInfoPage() {
   const [state, dispatch] = useFormPageReducer();
 
-  const validateFields = () => {
-    // const errors = {};
+  // const validateFields = () => {
+  //   const errors = {};
 
-    // if (!state.name) {
-    //   errors.name = "Name is required";
-    // } else if (state.name.length <= 2) {
-    //   errors.name = "Name must be more than 2 characters";
-    // }
+  //   if (!state.name) {
+  //     errors.name = "Name is required";
+  //   } else if (state.name.length <= 2) {
+  //     errors.name = "Name must be more than 2 characters";
+  //   }
 
-    // if (!state.email) {
-    //   errors.email = "Email is required";
-    // } else if (!/\S+@\S+\.\S+/.test(state.email)) {
-    //   errors.email = "Email is invalid";
-    // }
+  //   if (!state.email) {
+  //     errors.email = "Email is required";
+  //   } else if (!/\S+@\S+\.\S+/.test(state.email)) {
+  //     errors.email = "Email is invalid";
+  //   }
 
-    // if (!state.height) {
-    //   errors.height = "height is required";
-    // } else if (state.role.length <= 1) {
-    //   errors.role = "height must be more than 2 characters";
-    // }
+  //   if (!state.height) {
+  //     errors.height = "height is required";
+  //   } else if (state.height.length <= 1) {
+  //     errors.height = "height must be more than 2 characters";
+  //   }
 
-    // if (!state.phoneNumber) {
-    //   errors.phoneNumber = "Contact Number is required";
-    // } else if (
-    //   !/^(1\s|1|)?((\(\d{3}\))|\d{3})(\-|\s)?(\d{3})(\-|\s)?(\d{4})$/.test(
-    //     state.contactNumber
-    //   )
-    // ) {
-    //   errors.phoneNumber = "Contact number must be a 10 digit number";
-    // }
+  //   if (!state.phoneNumber) {
+  //     errors.phoneNumber = "Contact Number is required";
+  //   } else if (
+  //     !/^(1\s|1|)?((\(\d{3}\))|\d{3})(\-|\s)?(\d{3})(\-|\s)?(\d{4})$/.test(
+  //       state.contactNumber
+  //     )
+  //   ) {
+  //     errors.phoneNumber = "Contact number must be a 10 digit number";
+  //   }
 
-    // dispatch({ type: "SET_ERRORS", payload: errors });
+  //   dispatch({ type: "SET_ERRORS", payload: errors });
 
-    // // Return true if no errors, false otherwise
-    // return Object.keys(errors).length === 0;
-  };
+  
+  //   return Object.keys(errors).length === 0;
+  // };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (validateFields()) {
-      console.log("Form submitted successfully", state);
-    }
+   validateFields()
   };
 
   return (
@@ -103,7 +101,7 @@ function BasicInfoPage() {
             onChange={(e) =>
               dispatch({ type: "SET_PHONE_NUMBER", payload: e.target.value })
             }
-            placeholder={"099112345678"}
+            placeholder={"09912345678"}
             errorMessage={state.errors.phoneNumber}
           />
                  
@@ -128,7 +126,7 @@ function BasicInfoPage() {
             }
             placeholder={"ex: 100kg"}
           />
-                 {/* <SubmitButton submitName={"Next Page"} /> */}       
+          {/*        <SubmitButton submitName={"Next Page"} />        */}
           <Link to="/medicalhistory">
             <SubmitButton submitName={"Next Page"} />
           </Link>

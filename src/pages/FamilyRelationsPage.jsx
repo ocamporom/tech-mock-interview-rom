@@ -6,7 +6,7 @@ import styles from "./FamilyRelationsPage.module.css";
 import SubmitButton from "../components/SubmitButton";
 
 function FamilyRelationsPage() {
-  const [addMember, setAddMember] = useState(false); 
+  const [addMember, setAddMember] = useState(false);
   // const [showMessage, setShowMessage] = useState(false);
 
   const handleSubmit = (e) => {
@@ -19,18 +19,19 @@ function FamilyRelationsPage() {
   };
 
   const handleAddMemberChange = () => {
-    setAddMember(!addMember); 
+    setAddMember(!addMember);
   };
 
   return (
     <>
-         <header className="text-center text-4xl font-bold">
+      <header className="text-center text-4xl font-bold">
                 <h1>FAMILY COMPOSITIONS</h1>
-      </header><br/>
-         
+      </header>
+      <br />
+
       <div className={styles.InputFields}>
         <div className={styles.SubInputFields}>
-        <h6>Please fill up all fields!</h6>
+          <h6>Please fill up all fields!</h6>
           <InputField label={"Other Source of Income"} />
           <InputField type="number" label={"Birth Order"} />
           <InputField type="number" label={"Total House Population"} />
@@ -40,12 +41,16 @@ function FamilyRelationsPage() {
       </div>
 
       <div className={styles.optionalForm}>
-        <button onClick={handleAddMemberChange}>
+        <button onClick={handleAddMemberChange} className="p-2 border border-gray-500 rounded-md">
           Want to add Family Member/s?
-        </button>
-
+        </button >
         {addMember && (
           <div className={styles.AddMemberForm}>
+            <header className="text-center text-2xl font-bold">
+                      <h1>SCHOLAR MANAGEMENT</h1>
+            </header>
+            <br />
+
             <InputField label={"Family Member Name"} />
             <InputField
               type="date"
@@ -61,20 +66,18 @@ function FamilyRelationsPage() {
         <br />
         <br />
         <Link to="/medicalhistory">
-            <SubmitButton submitName={"Back to Medical History Page"} />
-          </Link>
-           
-          <Link to="/confirmationpage">
-            <SubmitButton submitName={"SUBMIT"} />
-          </Link>
+          <SubmitButton submitName={"Back to Medical History Page"} />
+        </Link>
+         
+        <Link to="/confirmationpage">
+          <SubmitButton submitName={"SUBMIT"} />
+        </Link>
         {/* <Link to="/">Basic Info Page</Link>
         <br />
         <Link to="/medicalhistory">Medical History Page</Link>
         <br />
         <Link to="/confirmationpage">SUBMIT!</Link> */}
         {/* <button onClick={handleSubmit}> SUBMIT </button> */}
-
-
       </div>
 
       {/* {showMessage && (
