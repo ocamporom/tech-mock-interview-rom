@@ -10,15 +10,17 @@ function FamilyRelationsPage() {
   const [showMessage, setShowMessage] = useState(false);
 
   const handleSubmit = (e) => {
-    e.preventDefault();
+    e.preventDefault(); //for the popup of the boolean variable @ line 89
     setShowMessage(true);
   };
 
   const handleClosePopUp = () => {
+    //for the close button of the boolean variable
     setShowMessage(false);
   };
 
   const handleAddMemberChange = () => {
+    // for the additional members
     setAddMember(!addMember);
   };
 
@@ -41,9 +43,12 @@ function FamilyRelationsPage() {
       </div>
 
       <div className={styles.optionalForm}>
-        <button onClick={handleAddMemberChange} className="p-2 border border-gray-500 rounded-md">
+        <button
+          onClick={handleAddMemberChange}
+          className="p-2 border border-gray-500 rounded-md"
+        >
           Want to add Family Member/s?
-        </button >
+        </button>
         {addMember && (
           <div className={styles.AddMemberForm}>
             <header className="text-center text-2xl font-bold">
@@ -59,13 +64,13 @@ function FamilyRelationsPage() {
             />
             <InputField label={"Relationship"} />
             <InputField label={"Civil Status"} />
-            <button className="p-2 border border-gray-300 rounded-md">Add</button> 
-            <button className="p-2 border border-gray-300 rounded-md">Delete</button>
-
-
+            <button className="p-2 border border-gray-300 rounded-md">
+              Add
+            </button>
+            <button className="p-2 border border-gray-300 rounded-md">
+              Delete
+            </button>
           </div>
-
-          
         )}
         <br />
         <br />
