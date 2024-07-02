@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import Header from "../components/Header";
-import InputFields from "../components/InputFields";
+import InputField from "../components/InputField";
 import styles from "./FamilyRelationsPage.module.css";
 import SubmitButton from "../components/SubmitButton";
 
@@ -24,19 +24,18 @@ function FamilyRelationsPage() {
 
   return (
     <>
-      <div className={styles.headerName}>
-        <Header headerName={"FAMILY COMPOSITIONS"} />
-        
-      </div>
+         <header className="text-center text-4xl font-bold">
+                <h1>FAMILY COMPOSITIONS</h1>
+      </header><br/>
          
       <div className={styles.InputFields}>
         <div className={styles.SubInputFields}>
         <h6>Please fill up all fields!</h6>
-          <InputFields label={"Other Source of Income"} />
-          <InputFields type="number" label={"Birth Order"} />
-          <InputFields type="number" label={"Total House Population"} />
-          <InputFields type="number" label={"# of Married Siblings"} />
-          <InputFields label={"Contributions"} />
+          <InputField label={"Other Source of Income"} />
+          <InputField type="number" label={"Birth Order"} />
+          <InputField type="number" label={"Total House Population"} />
+          <InputField type="number" label={"# of Married Siblings"} />
+          <InputField label={"Contributions"} />
         </div>
       </div>
 
@@ -47,14 +46,14 @@ function FamilyRelationsPage() {
 
         {addMember && (
           <div className={styles.AddMemberForm}>
-            <InputFields label={"Family Member Name"} />
-            <InputFields
+            <InputField label={"Family Member Name"} />
+            <InputField
               type="date"
               // value="2024-07-01"
               label={"Date of Birth"}
             />
-            <InputFields label={"Relationship"} />
-            <InputFields label={"Civil Status"} />
+            <InputField label={"Relationship"} />
+            <InputField label={"Civil Status"} />
           </div>
         )}
         <br />

@@ -27,10 +27,11 @@ const MedicalHistoryPage = () => {
   };
 
   return (
-    <div className={style.medicalInfo}>
-      <div className={style.headerName}>
-        <Header headerName={"MEDICAL HISTORY PAGE"} />
-      </div>
+    <div className="border-solid text-center">
+           <header className="text-center text-4xl font-bold">
+                <h1>MEDICAL HISTORY PAGE</h1>
+      </header>
+      <br/>
       <div>
         <label>
           Do you drink alcohol?
@@ -47,7 +48,7 @@ const MedicalHistoryPage = () => {
           <div>
             <label>How often do you drink?</label>
             <br />
-            <textarea
+            <textarea className="border-solid"
               value={alcoholFrequency}
               onChange={(e) => setAlcoholFrequency(e.target.value)}
               rows={4}

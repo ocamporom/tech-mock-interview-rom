@@ -43,7 +43,7 @@ function BasicInfoPage() {
 
   return (
     <div className="container mx-auto">
-      <header className="text-center text-3xl font-bold">
+      <header className="text-center text-4xl font-bold">
                 <h1>BASIC INFORMATION PAGE</h1>
       </header>
              

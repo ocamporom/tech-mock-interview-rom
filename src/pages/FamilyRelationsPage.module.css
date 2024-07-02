@@ -13,6 +13,7 @@ font-size: x-large;
 
 .optionalForm{
   text-align: center;
+  border-style: inset;
 }
 .showMessage{
   text-align: center;
